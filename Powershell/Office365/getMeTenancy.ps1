@@ -130,8 +130,10 @@
 .Notes
    Author: Joe Richards
    Date:   15/09/2017
-.LINK
-  https://github.com/joer89/Admin-Tools.git
+
+.Link
+   https://github.com/joer89/SysOps.git
+
 #>
 
 
