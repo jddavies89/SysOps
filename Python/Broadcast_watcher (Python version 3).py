@@ -29,7 +29,6 @@ Link                    : https://github.com/joer89/System_Operations.git
 
 Modules                 : winregistry - .\pip.exe install winregistry
 
-
 Running the program:
 
         The Client runs as follows.
