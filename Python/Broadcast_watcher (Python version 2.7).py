@@ -22,7 +22,7 @@ Edits                   : To make this program work for yourself, you will need 
                         : sendgmailsmtp - Change the email credentials to your gmail.
                         : sendOffice365smtp - Change the email credentials to your Office365.
 
-Link                    : https://github.com/joer89/System_Operations.git
+Link                    : https://github.com/joer89/SysOps.git
 
 Running the program:
 
@@ -44,7 +44,7 @@ Example of the Server side running:
         [+] Client connection ('127.0.0.1', 50531)
         ---> stat: b'User <username> logged in on computer <Computername>'
         ---> Time: 'Tue Mar 20 10:39:32 2018'
-        [+]--¬
+        [+]--Â¬
 
         Pinging 127.0.0.1 with 32 bytes of data:
         Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
@@ -60,7 +60,7 @@ Example of the Server side running:
         ---> stat: b'User <username> logged in on computer <Computername>'
         ---> Time: 'Tue Mar 20 10:39:42 2018'
         127.0.0.1 is in the list
-        [+]--¬
+        [+]--Â¬
 
         Pinging 127.0.0.1 with 32 bytes of data:
         Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
@@ -79,7 +79,7 @@ Example of the Server side running:
         ---> stat: b'User <username> logged in on computer <Computername>'
         ---> Time: 'Tue Mar 20 10:39:52 2018'
         127.0.0.1 is in the list
-        [+]--¬
+        [+]--Â¬
 
         Pinging 10.xxx.xxx.xxx with 32 bytes of data:
         Reply from 10.xxx.xxx.xxx: bytes=32 time<1ms TTL=128
@@ -201,7 +201,7 @@ def sendOffice365smtp(msgText):
 #Ping the ip addresses seperately within each thread.
 def pingIPAddress(address):
         #Ping the ip addresses within the list of IP Addresses.
-        print("[+]--¬")
+        print("[+]--Â¬")
         response = os.system(("ping -n 1 -i 10 %s") % address)
         print("\n\n")
         # and then check the response...
