@@ -25,7 +25,7 @@ Edits                   : To make this program work for yourself, you will need 
                         : sendgmailsmtp - Change the email credentials to your gmail.
                         : sendOffice365smtp - Change the email credentials to your Office365.
 
-Link                    : https://github.com/joer89/System_Operations.git
+Link                    : https://github.com/joer89/SysOps.git
 
 Modules                 : winregistry - .\pip.exe install winregistry
 
