@@ -6,8 +6,8 @@
   .Notes
     Name  : Office365_CalendarPermissions
     Author: Joe Richards
-  .Link
-    https://github.com/joer89/Admin-Tools.git
+ .Link
+   https://github.com/joer89/SysOps.git
 #>
 
 
