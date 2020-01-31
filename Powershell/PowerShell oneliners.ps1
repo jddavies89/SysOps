@@ -2,18 +2,23 @@
 .SYNOPSIS
     These set of scripts are general one liners in Powershell for everyday use.
 .DESCRIPTION 
-        You need to import the ActiveDirectory module for the AD scripts.
         If you have any more, contact me and ill add them in.
+        Modules:
+            ActiveDirectory
+            MSOnline
+
 .Notes
    Author: Joe Richards
    Date:   30/01/2020
- .Link
-   https://github.com/joer89/SysOps.git
-
+.LINK
+  https://github.com/joer89/Admin-Tools.git
 #>
 
 
 #Active Directory.
+
+#Reset all User account passwords in an OU if the department is equal to ...
+Get-ADUser -Filter {Department -eq "DEPARTMENT"} -SearchScope Subtree -SearchBase "OU=Generic Accounts,OU=Users,OU=Organisation,DC=contoso,DC=com" | Set-ADAccountPassword -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "Password" -Force)
 
 #Export to csv file all accounts cn and last logon time stamp.
 Get-ADUser -Filter * -SearchBase "OU=Users,OU=TRS,DC=trs,DC=local" -ResultPageSize 0 -Properties CN,lastLogonTimestamp | Select CN,lastLogonTimestamp | Export-CSV -NoType c:\files\last.csv
@@ -54,3 +59,9 @@ Get-WmiObject Win32_PnPSignedDriver -ComputerName trs-002-main | Select devicena
 
 #Get the Size of the primary drive in PS instead of using diskpart.
 get-disk -Number 0 | Format-List Size
+
+#Microsoft 365.
+#presuming you have connected already: https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell?view=exchange-ps
+
+#Search for mailbox by name.
+Get-Mailbox -Anr Joe
