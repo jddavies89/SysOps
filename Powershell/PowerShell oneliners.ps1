@@ -65,3 +65,19 @@ get-disk -Number 0 | Format-List Size
 
 #Search for mailbox by name.
 Get-Mailbox -Anr Joe
+
+#Remove all Powerhell Session from Microsooft 365.
+Get-PSSession | Remove-PSSession
+
+#Message trace on all incoming emails on 31 of Jan 20 
+Get-MessageTrace -RecipientAddress itsupport@theregisschool.co.uk -StartDate 01/30/2020 -EndDate 01/31/2020
+
+#Message trace on all out going emails on 31 of Jan 20 
+Get-MessageTrace -SenderAddress itsupport@theregisschool.co.uk -StartDate 01/30/2020 -EndDate 01/31/2020
+
+#Get a more detailed message trace with the following headings; Receive, submit, Transport rule, deliver and spam diagnostics.
+Get-MessageTrace -SenderAddress itsupport@theregisschool.co.uk -StartDate 01/30/2020 -EndDate 01/31/2020 | Get-MessageTraceDetail
+
+#Get a more detailed message trace with sender and receiver emails, you can pipe Format-List for a more detailed list again.
+Get-MessageTrace -SenderAddress John.Crittenden@theregisschool.co.uk -RecipientAddress itsupport@theregisschool.co.uk -StartDate 01/30/2020 -EndDate 01/31/2020
+
