@@ -70,7 +70,7 @@ Get-Mailbox -Anr Joe
 Get-PSSession | Remove-PSSession
 
 #Message trace on all incoming emails on 31 of Jan 20 
-Get-MessageTrace -RecipientAddress itsupport@theregisschool.co.uk -StartDate 01/30/2020 -EndDate 01/31/2020
+Get-MessageTrace -RecipientAddress <Receiver_Address> -StartDate 01/30/2020 -EndDate 01/31/2020
 
 #Message trace on all out going emails on 31 of Jan 20 
 Get-MessageTrace -SenderAddress <Sender_address> -StartDate 01/30/2020 -EndDate 01/31/2020
