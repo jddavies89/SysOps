@@ -69,8 +69,10 @@ Get-Mailbox -Anr Joe
 #Remove all Powerhell Session from Microsooft 365.
 Get-PSSession | Remove-PSSession
 
+#Message trace
+
 #Message trace on all incoming emails on 31 of Jan 20 
-Get-MessageTrace -RecipientAddress <Receiver_Address> -StartDate 01/30/2020 -EndDate 01/31/2020
+Get-MessageTrace -RecipientAddress <Recipient address> -StartDate 01/30/2020 -EndDate 01/31/2020
 
 #Message trace on all out going emails on 31 of Jan 20 
 Get-MessageTrace -SenderAddress <Sender_address> -StartDate 01/30/2020 -EndDate 01/31/2020
@@ -79,5 +81,15 @@ Get-MessageTrace -SenderAddress <Sender_address> -StartDate 01/30/2020 -EndDate 
 Get-MessageTrace -SenderAddress <Sender_address> -StartDate 01/30/2020 -EndDate 01/31/2020 | Get-MessageTraceDetail
 
 #Get a more detailed message trace with sender and receiver emails, you can pipe Format-List for a more detailed list again.
-Get-MessageTrace -SenderAddress <Sender_address> -RecipientAddress <Receiver_Address> -StartDate 01/30/2020 -EndDate 01/31/2020
+Get-MessageTrace -SenderAddress <Sender_address> -RecipientAddress <Recipient address> -StartDate 01/30/2020 -EndDate 01/31/2020
 
+#Quarentine
+
+#Display all emails for a indiviual email account that are in quarentine on a specific date.
+Get-QuarantineMessage -RecipientAddress <Recipient address> -StartReceivedDate 01/30/2020
+
+#Display and pinpoint a single quarentineed email.
+Get-QuarantineMessage -RecipientAddress <Recipient address> -Subject "Subject line" -StartReceivedDate 01/30/2020
+
+#Release that single quarentined email.
+Get-QuarantineMessage -RecipientAddress <Recipient address> -Subject "Subject line" -StartReceivedDate 01/30/2010 | Release-QuarantineMessage -User <Recipient address>
