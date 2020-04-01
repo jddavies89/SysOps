@@ -55,8 +55,8 @@ Get-WmiObject Win32_PnPSignedDriver| select devicename, driverversion | where {$
 #Display Intel drivers and version on a remote machine.
 Get-WmiObject Win32_PnPSignedDriver -ComputerName trs-002-main | Select devicename, driverversion | where {$_.devicename -like "*intel*"}
 
-#Display the Model and computername from a list of machines.
-Get-WmiObject -ComputerName (Get-Content -Path "C:\DNSServerNameList.txt") win32_computersystem | Format-List model, name
+#Display the Model and computername from a list of machines and report to a text file called Result.txt
+Get-WmiObject -ComputerName (Get-Content -Path "C:\DNSServerNameList.txt") win32_computersystem | Format-List model, name | Out-File "C:\Result.txt"
 
 #Disk Utilities
 
